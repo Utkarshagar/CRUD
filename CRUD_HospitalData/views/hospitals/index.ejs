@@ -1,0 +1,24 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="row">
+    <% for (let hospital of hospitals) { %>
+        <div class="col-lg-3 mt-5">
+            <div class="card mx-auto shadow" style="width: 18rem;">
+                <!-- You can add an image if needed -->
+                <!-- <img src="<%= hospital.img %>" class="card-img-top"> -->
+                <div class="card-body">
+                    <h5 class="card-title"><%= hospital.hospitalName %></h5>
+                    <p class="card-text"><strong>Location:</strong> <%= hospital.location %></p>
+                    <p class="card-text"><strong>Doctors:</strong> <%= hospital.numberOfDoctors %></p>
+                    <p class="card-text"><strong>Beds:</strong> <%= hospital.numberOfBed %></p>
+                    <a href="/hospitals/<%= hospital._id %>" class="btn btn-success">View</a>
+                    
+                    <!-- Delete button -->
+                    <form class="d-inline-block" action="/hospitals/<%= hospital._id %>?_method=DELETE" method="post">
+                        <button type="submit" class="btn btn-md btn-danger d-inline-block">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <% } %>
+</div>

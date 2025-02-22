@@ -1,0 +1,22 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="row">
+    <div class="col-lg-4 mt-5">
+        <div class="card mx-auto shadow" style="width: 18rem;">
+            <!-- Optionally add an image if you have a hospital image field -->
+            <!-- <img src="<%= foundHospital.img %>" class="card-img-top"> -->
+            <div class="card-body">
+                <h5 class="card-title"><%= foundHospital.hospitalName %></h5>
+                <p class="card-text"><strong>Location:</strong> <%= foundHospital.location %></p>
+                <p class="card-text"><strong>Doctors:</strong> <%= foundHospital.numberOfDoctors %></p>
+                <p class="card-text"><strong>Beds:</strong> <%= foundHospital.numberOfBed %></p>
+                
+                <!-- Link to view hospital details -->
+                <a href="/hospitals/<%= foundHospital._id %>" class="btn btn-primary">View Details</a>
+                
+                <!-- Link to edit hospital details -->
+                <a href="/hospitals/<%= foundHospital._id %>/edit" class="btn btn-success">Edit</a>
+            </div>
+        </div>
+    </div>
+</div>
